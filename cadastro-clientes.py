@@ -14,7 +14,11 @@ datanasc = datetime(anonasc, mesnasc, dianasc)
 dataatual = datetime.now()
 idadecliente = dataatual - datanasc
 
+dias = idadecliente.days
+anos, dias = dias // 365, dias % 365
+meses, dias = dias // 30, dias % 30
+
 endereco = input('Digite o endereço: ')
 tel = input('Digite o telefone: ')
 
-print('Cliente: {}\nIdade do cliente {}\nTelefone: {}'.format(nome, idadecliente, endereco, tel))
+print('Cliente: {}\nIdade do cliente: {} anos\nEnderaço: {}\nTelefone: {}'.format(nome, anos, endereco, tel))
